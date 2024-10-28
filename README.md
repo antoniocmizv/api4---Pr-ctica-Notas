@@ -7,8 +7,8 @@ Además se guardan en un base de datos en MongoDB
 
 Asegúrate de tener instalado lo siguiente antes de comenzar:
 
-- [Node.js](https://nodejs.org/) (versión X.X.X o superior)
-- [npm](https://www.npmjs.com/) o [yarn](https://yarnpkg.com/)
+- [Node.js](https://nodejs.org/) 
+- [npm](https://www.npmjs.com/) 
 
 ## Instrucciones de Instalación
 
