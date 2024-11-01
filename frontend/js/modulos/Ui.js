@@ -1,4 +1,4 @@
-// js/modulos/Ui.js
+// Objetivo: Contiene las funciones que se encargan de la interfaz de usuario para imprimir las notas en el cliente.
 export const UI = {
     drawNotes: (notes, elementDiv) => {
         elementDiv.innerHTML = ''; // Limpia el contenido anterior

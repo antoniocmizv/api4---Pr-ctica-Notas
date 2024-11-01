@@ -20,6 +20,8 @@ const Note = mongoose.model('Note', noteSchema);
 app.use(cors());
 app.use(express.json());
 
+
+//ruta para obtener todas las notas
 app.get('/notes', async (req, res) => {
     try {
         const notes = await Note.find();
@@ -29,6 +31,7 @@ app.get('/notes', async (req, res) => {
     }
 });
 
+//ruta para agregar una nota
 app.post('/addNote', async (req, res) => {
     try {
         const newNote = new Note({

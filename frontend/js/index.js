@@ -5,6 +5,7 @@ import { UI } from './modulos/Ui.js';
 
 let notes = null;
 
+// Evento para enviar el formulario
 document.getElementById('noteForm').addEventListener('submit', (event) => {
     event.preventDefault();
     const tipo = document.getElementById('tipo').value;
@@ -18,6 +19,7 @@ document.getElementById('noteForm').addEventListener('submit', (event) => {
     });
 });
 
+// Evento para filtrar las notas
 document.getElementById('filterButton').addEventListener('click', () => {
     const filterMonth = document.getElementById('filterMonth').value;
     const filteredNotes = notes.filter(note => {
@@ -28,6 +30,7 @@ document.getElementById('filterButton').addEventListener('click', () => {
     UI.drawNotes(filteredNotes, document.getElementById('notes'));
 });
 
+// Obtener todas las notas
 NoteHandler.getInstance('http://localhost:3000').getAllNotes((datos) => {
     notes = NoteConsumer.consum(datos.lista);
     UI.drawNotes(notes, document.getElementById('notes'));
