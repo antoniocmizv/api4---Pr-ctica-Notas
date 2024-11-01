@@ -23,21 +23,9 @@ document.getElementById('filterButton').addEventListener('click', () => {
     const filteredNotes = notes.filter(note => {
         const noteDate = new Date(note.fecha);
         const filterDate = new Date(filterMonth);
-        return noteDate.getMonth() === filterDate.getMonth() && noteDate.getFullYear() === filterDate.getFullYear();
+        return noteDate.getMonth() === filterDate.getMonth();
     });
     UI.drawNotes(filteredNotes, document.getElementById('notes'));
-});
-
-document.getElementById('notes').addEventListener('click', (event) => {
-    if (event.target.classList.contains('delete-note')) {
-        const noteId = event.target.dataset.id;
-        NoteHandler.getInstance('http://localhost:3000').deleteNote(noteId, (datos) => {
-            notes = NoteConsumer.consum(datos.lista);
-            UI.drawNotes(notes, document.getElementById('notes'));
-        }, (error) => {
-            console.error(error);
-        });
-    }
 });
 
 NoteHandler.getInstance('http://localhost:3000').getAllNotes((datos) => {

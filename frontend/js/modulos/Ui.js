@@ -7,9 +7,7 @@ export const UI = {
             noteDiv.className = `note ${element.tipo}`;
             noteDiv.innerHTML = `
                 <p>${element.contenido}</p>
-                <p>${new Date(element.fecha).toLocaleDateString()}</p>
-                <button class="delete-note" data-id="${element._id}">Eliminar</button>
-            `;
+                <p>${new Date(element.fecha).toLocaleDateString()}</p>`;
             elementDiv.appendChild(noteDiv);
         });
     }
