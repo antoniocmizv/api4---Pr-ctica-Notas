@@ -21,6 +21,8 @@ git clone https://github.com/antoniocmizv/api4---Pr-ctica-Notas.git
 
 cd api4---Pr-ctica-Notas
 
+cd backend
+
 npm install
 
 node index.js
